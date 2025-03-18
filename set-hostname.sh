@@ -53,7 +53,7 @@ handle_result $? "Setting hostname"
 # Verify the hostname was set
 current_hostname=$(hostname)
 if [ "$current_hostname" == "$hostname" ]; then
-    printf "${COLOR_GREEN}[+] Hostname successfully set to %s${COLOR_RESET}\n" "$hostname"
+    printf "${COLOR_GREEN}[+] Hostname successfully set to %s please reboot${COLOR_RESET}\n" "$hostname"
 else
     printf "${COLOR_RED}[!] Failed to set hostname.${COLOR_RESET}\n" >&2
     exit 1
