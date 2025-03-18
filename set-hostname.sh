@@ -31,6 +31,12 @@ EOF
 # Display header
 header_info
 
+# Check if the script is run as root
+if [ "$(id -u)" != "0" ]; then
+    printf "${COLOR_RED}[!] This script must be run as root.${COLOR_RESET}\n" >&2
+    exit 1
+fi
+
 # Prompt the user to enter the hostname
 read -p "Enter the hostname: " hostname
 
@@ -41,7 +47,7 @@ if [ -z "$hostname" ]; then
 fi
 
 # Set the hostname
-sudo hostnamectl set-hostname "$hostname"
+hostnamectl set-hostname "$hostname"
 handle_result $? "Setting hostname"
 
 # Verify the hostname was set
