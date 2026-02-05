@@ -9,7 +9,7 @@ This script prompts the user to enter a hostname and sets it on a Linux machine.
 You can download and run the script using the following command:
 
 ```sh
-bash -c "$(wget -qLO - https://github.com/aureTheDev/set-hostname/raw/main/set-hostname.sh)"
+sudo bash -c "$(wget -qLO - https://github.com/aureTheDev/set-hostname/raw/main/set-hostname.sh)"
 ```
 
 ## Verify the Hostname Change
